@@ -1,0 +1,8 @@
+*.egg-info
+
+.env
+venv
+node_modules
+bower_components
+public
+.cache

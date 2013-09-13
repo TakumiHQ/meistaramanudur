@@ -1,0 +1,5 @@
+<a title="Mynd tekin af <%= @user.full_name %>"
+   href="<%= @link %>" target="_blank">
+  <img alt="Mynd tekin af <%= @user.full_name %>"
+       src="<%= @images.standard_resolution.url %>">
+</a>

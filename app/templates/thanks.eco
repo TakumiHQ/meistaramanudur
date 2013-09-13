@@ -1,0 +1,4 @@
+
+<h4>Til hamingju!</h4>
+<p>Þú ert númer <span class="count"><%= @count %></span> til að skrá þig í Meistaramánuð 2013.</p>
+<p>Þá er bara að setja sér markmið. Gangi þér vel!</p>

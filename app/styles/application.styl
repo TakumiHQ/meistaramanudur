@@ -1,0 +1,181 @@
+@import 'nib'
+@import '_base'
+
+$gold = #a29161
+$black = #231f20
+
+p
+h1
+h2
+h3
+h4
+h5
+input
+select
+button
+label
+li
+  font-family "freight-text-pro"
+
+a
+a:hover
+  color $gold
+
+.btn-primary
+  background $gold
+  border-color darken($gold, 20%)
+  &:hover
+    background darken($gold, 15%)
+    border-color darken($gold, 30%)
+
+h5
+  font-weight bold
+
+p
+  font-weight 400
+
+header
+  text-align center
+  margin-bottom 40px
+  h1
+    font-family "freight-text-pro"
+    text-transform uppercase
+  .logo
+    img
+      margin 30px
+      width 320px
+      max-width 100%
+  .lettering
+    img
+      width 519px
+      max-width 100%
+
+#introduction
+  h1
+    font-weight bold
+    text-align center
+    font-size 40px
+  h4
+    text-align center
+    margin 20px 0
+
+
+.label-gold
+  background $black
+  color $gold
+
+.label-facebook
+  background #3b5998
+  color white
+.label-twitter
+  background #019ad2
+  color white
+
+
+#skraning
+  position relative
+  overflow hidden
+  form
+    transition margin 0.6s ease
+  .thank-you
+    position absolute
+    transition opacity 1.4s ease-out
+    background rgba(255,255,255,0.8)
+    opacity 0
+    color $gold
+    text-align center
+    p
+      font-weight bold
+
+
+@media (min-width: 992px)
+  #skraning
+    height 510px
+  #skraning.done
+    form
+      margin-top -510px
+    .thank-you
+      padding-top 210px
+      height 510px
+      opacity 1
+
+
+
+/* Widen the fixed sidebar */
+
+
+.sidebar
+
+  margin-top 20px
+  text-align center
+  width 100%
+
+  &.affix
+    position static
+    top 0
+
+#instagram
+  p
+    margin-bottom 20px
+
+.photos
+  .post
+    text-align center
+    margin 10px 0
+    img
+      display block
+      margin 0 auto
+      max-width 100%
+      box-shadow 0 0 2px $black
+
+div.inverse
+  background $black url('../images/background.png') top right no-repeat
+  color white
+  position absolute
+  width 100%
+  overflow hidden
+  padding 30px 0
+
+
+@media (min-width: 992px)
+
+  .sidebar
+    text-align right
+    box-shadow 1px 0 0 $gold
+    width 120px
+
+    li > a
+      border-radius 0
+
+    &.affix
+      position fixed /* Undo the static from mobile first approach */
+      top 70px
+
+    &.affix-bottom
+      position absolute /* Undo the static from mobile first approach */
+
+    &.affix-bottom .bs-sidenav
+    &.affix .bs-sidenav
+      margin-top 0
+      margin-bottom 0
+
+  .inverse
+    margin-top 100px
+    box-shadow 0 -10px 20px white
+
+  .photos
+    .post
+      width 25%
+      padding 0.5%
+      float left
+      margin 0
+      img
+        width 100%
+
+
+footer
+  border-top 1px solid $gold
+  color $gold
+  margin 30px 0
+  padding 20px 0
+  text-align center

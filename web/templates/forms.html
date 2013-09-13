@@ -1,0 +1,79 @@
+{%- macro form_field_label(field) -%}
+  <label for="{{ field.id }}" class="col-lg-2 control-label">{{ field.label.text }}
+  {%- if field.flags.required -%}
+    <abbr class="required" title="This field is required">*</abbr>
+  {%- endif %}</label>
+{% endmacro %}
+
+{%- macro form_field_description(field) -%}
+  {% if field.description %}
+    <span class="descr">{{ field.description }}</span>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro form_field_errors(field) -%}
+  {% if field.errors %}
+  <div>
+    {%- for error in field.errors -%}
+    <span class="label important">{{ error }}</span>
+    {%- endfor -%}
+  </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro form_field_boolean(field) -%}
+ <div class="input">
+  <label>
+   {{ field(**kwargs) }}
+   <span>{{ field.label.text }}</span>
+   {{ form_field_description(field) }}
+   {{ form_field_errors(field) }}
+  </label>
+ </div>
+{%- endmacro -%}
+
+{%- macro action_buttons(submit_title, cancel_title="Cancel", submit_class="primary") -%}
+<div class="actions col-lg-offset-2 col-lg-10">
+ <input type="submit" class="btn btn-{{submit_class}}" value="{{submit_title}}">
+ &nbsp;
+ <button type="reset" class="btn">{{cancel_title}}</button>
+</div>
+{%- endmacro -%}
+
+{%- macro form_field(field) -%}
+  {% if field.type == 'HiddenField' %}
+    {{ field() }}
+  {% elif field.type in ('FormField', 'FieldList') %}
+    {{ form_fields(field, legend=field.label, **kwargs) }}
+  {% elif field.type == 'BooleanField' %}
+    {{ form_field_boolean(field, **kwargs) }}
+  {% else %}
+   <div class="form-group {{ "has-error" if field.errors }}" id="{{field.id}}-div">
+    {{ form_field_label(field) }}
+    <div class="col-lg-10">
+    {% if field.type == 'RadioField' %}
+      {{ field(class='radio-group', **kwargs) }}
+    {% else %}
+      {{ field(class='form-control', **kwargs) }}
+    {% endif %}
+      {{ form_field_description(field) }}
+      {{ form_field_errors(field) }}
+    </div>
+   </div>
+  {% endif %}
+{%- endmacro -%}
+
+{%- macro form_fields(fields, class=None, legend=None) -%}
+ <fieldset {% if class %}class="{{class}}"{% endif %}>
+  {% if legend %}
+   <legend>{{legend}}</legend>
+  {% endif %}
+  {% for field in fields %}
+    {% if field.type in ('CSRFTokenField', 'HiddenField') %}
+      {{ field() }}
+    {% else %}
+      {{ form_field(field) }}
+    {% endif %}
+  {% endfor %}
+ </fieldset>
+{%- endmacro -%}

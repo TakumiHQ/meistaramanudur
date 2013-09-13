@@ -1,0 +1,3 @@
+db: postgres
+web: venv/bin/python web/app.py
+brunch: brunch w
