@@ -64,13 +64,13 @@ class Meistaramanudur
         return $email.focus()
 
       mixpanel.track "Submit"
+      $form.find("button").button("loading")
       $.ajax
         type: "POST"
         url: $form.attr "action"
         data: fields
         dataType: "json"
         success: (data) ->
-          $form.find("button").button("loading")
           ($ ".thank-you").html (require './templates/thanks') count: data.number
           mixpanel.track "Signup", {errors: submitCount - 1}
           $form.parent().addClass("done")
