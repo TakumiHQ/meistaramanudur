@@ -77,57 +77,54 @@
 
           <div id="skraning" class="signup" data-spy="affix" data-offset-top="470">
 
-            <div class="inner">
+            <form action="{{ url_for('.signup') }}" id="signup" role="form">
 
-              <form action="{{ url_for('.signup') }}" id="signup" role="form">
-
-                <h3>Skráning</h3>
-                <div class="form-group">
-                  <label for="id-name">Nafn</label>
-                  <input type="text" class="form-control" id="id-name" name="name">
-                </div>
-                <div class="form-group">
-                  <label for="id-email">Netfang</label>
-                  <input type="email" class="form-control" id="id-email" name="email">
-                </div>
-                <p class="hidden-md">
-                  Þú ræður hvort þú deilir þessum upplýsingunum fyrir neðan með okkur,
-                  en það væri vel þegið!</p>
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <label for="id-phone">Símanúmer</label>
-                    <input type="text" class="form-control" id="id-phone" name="phone">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="id-age">Aldur</label>
-                    <input type="number" class="form-control" id="id-age" name="age">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <label for="id-blog" data-toggle="tooltip" title="Vefslóð á blogg þar sem haldið verður utan um árangur þinn í mánuðinum">Árangursblogg <span class="text-muted">?</span></label>
-                    <input type="text" class="form-control" id="id-blog" name="blog">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="id-instagram">Instagram notandi</label>
-                    <input type="text" class="form-control" id="id-instagram" name="instagram">
-                  </div>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="oldie"> Já, ég hef áður tekið Meistaramánuð!
-                  </label>
-                </div>
-                <p>
-                  <button type="submit" class="btn btn-primary" data-loading-text="Augnablik..." data-done-text="Takk!">Skrá mig til leiks!</button>
-                </p>
-                <p>
-                  <small class="text-muted">Engar áhyggjur, okkur er jafn illa við ruslpóst og þér</small>
-                </p>
-              </form>
-
-              <div class="thank-you">
+              <h3>Skráning</h3>
+              <div class="form-group">
+                <label for="id-name">Nafn</label>
+                <input type="text" class="form-control" id="id-name" name="name">
               </div>
+              <div class="form-group">
+                <label for="id-email">Netfang</label>
+                <input type="email" class="form-control" id="id-email" name="email">
+              </div>
+              <p class="hidden-md">
+                Þú ræður hvort þú deilir þessum upplýsingunum fyrir neðan með okkur,
+                en það væri vel þegið!</p>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="id-phone">Símanúmer</label>
+                  <input type="text" class="form-control" id="id-phone" name="phone">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="id-age">Aldur</label>
+                  <input type="number" class="form-control" id="id-age" name="age">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="id-blog" data-toggle="tooltip" title="Vefslóð á blogg þar sem haldið verður utan um árangur þinn í mánuðinum">Árangursblogg <span class="text-muted">?</span></label>
+                  <input type="text" class="form-control" id="id-blog" name="blog">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="id-instagram">Instagram notandi</label>
+                  <input type="text" class="form-control" id="id-instagram" name="instagram">
+                </div>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="oldie"> Já, ég hef áður tekið Meistaramánuð!
+                </label>
+              </div>
+              <p>
+                <button type="submit" class="btn btn-primary" data-loading-text="Augnablik..." data-done-text="Takk!">Skrá mig til leiks!</button>
+              </p>
+              <p>
+                <small class="text-muted">Engar áhyggjur, okkur er jafn illa við ruslpóst og þér</small>
+              </p>
+            </form>
+
+            <div class="thank-you">
             </div>
 
           </div>
