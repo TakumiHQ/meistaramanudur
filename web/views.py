@@ -34,7 +34,8 @@ def signup():
         {'email': applicant.email.lower()},
         {'NAME': applicant.name, 'OLD': "No" if newcomer else "Yes"},
         email_type='html',
-        update_existing=True
+        update_existing=True,
+        double_optin=False,
     )
 
     return jsonify(number=Applicant.query.count())

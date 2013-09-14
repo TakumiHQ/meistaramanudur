@@ -71,11 +71,11 @@
 
         <div class="col-md-6">
 
-          <h3>Skráning</h3>
-
           <div id="skraning">
 
             <form action="{{ url_for('.signup') }}" id="signup" role="form">
+
+              <h3>Skráning</h3>
               <div class="form-group">
                 <label for="id-name">Nafn</label>
                 <input type="text" class="form-control" id="id-name" name="name">
@@ -114,7 +114,7 @@
                 </label>
               </div>
               <p>
-                <button type="submit" class="btn btn-primary" data-loading-text="Augnablik...">Skrá mig til leiks!</button>
+                <button type="submit" class="btn btn-primary" data-loading-text="Augnablik..." data-done-text="Takk!">Skrá mig til leiks!</button>
               </p>
               <p>
                 <span class="text-muted">Engar áhyggjur, okkur er jafn illa við ruslpóst og þér</span>
@@ -122,10 +122,6 @@
             </form>
 
             <div class="thank-you">
-              <p>
-                Til hamingju! Þú ert númer <span class="count">100</span> til að skrá þig í Meistaramánuð 2013. <br>
-                Þá er bara að setja sér markmið. Gangi þér vel!
-              </p>
             </div>
 
           </div>

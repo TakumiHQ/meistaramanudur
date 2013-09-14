@@ -72,6 +72,7 @@ class Meistaramanudur
         dataType: "json"
         success: (data) ->
           ($ ".thank-you").html (require './templates/thanks') count: data.number
+          $form.find("button").button("done")
           mixpanel.track "Signup", {errors: submitCount - 1}
           $form.parent().addClass("done")
 
