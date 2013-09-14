@@ -1,8 +1,8 @@
 # encoding=utf-8
 
 import os
-from flask import Blueprint, jsonify, render_template, request, abort
-from mailchimp import Mailchimp, Error as MailchimpError
+from flask import Blueprint, jsonify, render_template, request
+from mailchimp import Mailchimp
 
 from .models import Applicant
 from .extensions import db
@@ -17,20 +17,8 @@ def index():
 @views.route('/signup', methods=["POST"])
 def signup():
 
-    """
-    try:
-        mailchimp.subscribe(
-            '493cdb0d3b',
-            request.json['email'],
-            email_type='html',
-            update_existing=True
-        )
-    except MailchimpError, e:
-        return jsonify(message=str(e)), 403
-    """
-
     data = request.form.to_dict()
-    newcomer = bool(data.pop("newbie", False))
+    newcomer = not bool(data.pop("oldie", False))
     blog_url = data.pop("blog")
     try:
         age = int(data.pop("age"))
@@ -40,5 +28,13 @@ def signup():
     applicant = Applicant(age=age, blog_url=blog_url, newcomer=newcomer, **data)
     db.session.add(applicant)
     db.session.commit()
+
+    mailchimp.lists.subscribe(
+        '493cdb0d3b',
+        {'email': applicant.email.lower()},
+        {'NAME': applicant.name, 'OLD': "No" if newcomer else "Yes"},
+        email_type='html',
+        update_existing=True
+    )
 
     return jsonify(number=Applicant.query.count())

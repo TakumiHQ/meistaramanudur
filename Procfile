@@ -1,1 +1,1 @@
-web: gunicorn quizup.app:app -w 3
+web: gunicorn wsgi -w 3
