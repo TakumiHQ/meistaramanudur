@@ -24,7 +24,7 @@
     <div class="col-md-2">
       <div class="sidebar" data-spy="affix" data-offset-top="470">
         <ul class="nav nav-pills nav-stacked">
-          <li><a href="#skraning">Skráning</a></li>
+          <li><a href="#markmidid">Markmiðið</a></li>
           <li><a href="#spurningar">Spurningar</a></li>
           <li><a href="#instagram">Instagram</a></li>
         </ul>
@@ -41,9 +41,9 @@
 
       <div class="row">
 
-        <div class="col-md-6">
+        <div class="col-md-7">
 
-          <div id="introduction">
+          <div id="markmidid">
 
             <h3>Markmiðið</h3>
 
@@ -58,70 +58,76 @@
             stendur yfir í 30 daga og mun ögra þátttakendum líkamlega og andlega í
             átt að því að verða meistarar eigin lífs.</p>
 
-            <h1><span class="label label-gold">#meistaram</span></h1>
+            <div class="social">
 
-            <h4>
-              <a class="label label-facebook" href="http://www.facebook.com/meistaramanudur">Facebook</a>
-              <a class="label label-twitter" href="http://twitter.com/meistaramanudur">Twitter</a>
-            </h4>
+              <h3 class="slogan"><strong>Skoraðu á sjálfan þig</strong> <br> Lifðu eins og meistari</h3>
+              <h1><span class="label label-gold">#meistaram</span></h1>
+
+              <h4>
+                <a class="label label-facebook" href="http://www.facebook.com/meistaramanudur">Facebook</a>
+                <a class="label label-twitter" href="http://twitter.com/meistaramanudur">Twitter</a>
+              </h4>
+            </div>
 
           </div>
 
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-5">
 
-          <div id="skraning">
+          <div id="skraning" class="signup" data-spy="affix" data-offset-top="470">
 
-            <form action="{{ url_for('.signup') }}" id="signup" role="form">
+            <div class="inner">
 
-              <h3>Skráning</h3>
-              <div class="form-group">
-                <label for="id-name">Nafn</label>
-                <input type="text" class="form-control" id="id-name" name="name">
-              </div>
-              <div class="form-group">
-                <label for="id-email">Netfang</label>
-                <input type="email" class="form-control" id="id-email" name="email">
-              </div>
-              <h4>Aðrar upplýsingar</h4>
-              <p>
-                Þú ræður hvort þú deilir þessum upplýsingunum fyrir neðan með okkur,
-                en það væri vel þegið!</p>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="id-phone">Símanúmer</label>
-                  <input type="text" class="form-control" id="id-phone" name="phone">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="id-age">Aldur</label>
-                  <input type="number" class="form-control" id="id-age" name="age">
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="id-blog" data-toggle="tooltip" title="Vefslóð á blogg þar sem haldið verður utan um árangur þinn í mánuðinum">Árangursblogg <span class="text-muted">?</span></label>
-                  <input type="text" class="form-control" id="id-blog" name="blog">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="id-instagram">Instagram Notendanafn</label>
-                  <input type="text" class="form-control" id="id-instagram" name="instagram">
-                </div>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" name="oldie"> Já, ég hef áður tekið Meistaramánuð!
-                </label>
-              </div>
-              <p>
-                <button type="submit" class="btn btn-primary" data-loading-text="Augnablik..." data-done-text="Takk!">Skrá mig til leiks!</button>
-              </p>
-              <p>
-                <span class="text-muted">Engar áhyggjur, okkur er jafn illa við ruslpóst og þér</span>
-              </p>
-            </form>
+              <form action="{{ url_for('.signup') }}" id="signup" role="form">
 
-            <div class="thank-you">
+                <h3>Skráning</h3>
+                <div class="form-group">
+                  <label for="id-name">Nafn</label>
+                  <input type="text" class="form-control" id="id-name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="id-email">Netfang</label>
+                  <input type="email" class="form-control" id="id-email" name="email">
+                </div>
+                <p class="hidden-md">
+                  Þú ræður hvort þú deilir þessum upplýsingunum fyrir neðan með okkur,
+                  en það væri vel þegið!</p>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="id-phone">Símanúmer</label>
+                    <input type="text" class="form-control" id="id-phone" name="phone">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="id-age">Aldur</label>
+                    <input type="number" class="form-control" id="id-age" name="age">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="id-blog" data-toggle="tooltip" title="Vefslóð á blogg þar sem haldið verður utan um árangur þinn í mánuðinum">Árangursblogg <span class="text-muted">?</span></label>
+                    <input type="text" class="form-control" id="id-blog" name="blog">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="id-instagram">Instagram notandi</label>
+                    <input type="text" class="form-control" id="id-instagram" name="instagram">
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="oldie"> Já, ég hef áður tekið Meistaramánuð!
+                  </label>
+                </div>
+                <p>
+                  <button type="submit" class="btn btn-primary" data-loading-text="Augnablik..." data-done-text="Takk!">Skrá mig til leiks!</button>
+                </p>
+                <p>
+                  <small class="text-muted">Engar áhyggjur, okkur er jafn illa við ruslpóst og þér</small>
+                </p>
+              </form>
+
+              <div class="thank-you">
+              </div>
             </div>
 
           </div>
@@ -131,42 +137,64 @@
 
       <div class="row">
 
-        <div id="spurningar" class="col-md-9">
+        <div id="spurningar" class="col-md-7">
 
           <h3>Spurt og svarað</h3>
 
-          <h5>Hvað þarf ég að gera til þess að taka þátt í Meistaramánuði?</h5>
-          <p>Í raun þarftu ekkert nema viljann og metnaðinn til að setja þér markmið fyrir einn mánuð og standa við þau. Við mælum með því að þú skráir þig til leiks á www.meistaramanudur.is og fáir sem flesta vini, fjölskyldumeðlimi og vinnufélaga til að taka þátt með þér. Svo þarftu bara að skrifa markmiðin niður. Þegar nær dregur Meistaramánuði sendum við út dagatal sem þú getur skrifað markmiðin á.</p>
+          <div class="question open">
+            <h5>Hvað þarf ég að gera til þess að taka þátt í Meistaramánuði?</h5>
+            <p>Í raun þarftu ekkert nema viljann og metnaðinn til að setja þér markmið fyrir einn mánuð og standa við þau. Við mælum með því að þú skráir þig til leiks á www.meistaramanudur.is og fáir sem flesta vini, fjölskyldumeðlimi og vinnufélaga til að taka þátt með þér. Svo þarftu bara að skrifa markmiðin niður. Þegar nær dregur Meistaramánuði sendum við út dagatal sem þú getur skrifað markmiðin á.</p>
+          </div>
 
-          <h5>Er þetta ekki bara enn eitt átakið eins og áramótaátakið sem ég stend aldrei við?</h5>
-          <p>Meistaramánuðurinn á ekki að vera átak, heldur upphafið á breytingu lífs þíns til hins betra. Meistaramánuðurinn snýst ekki bara um að taka vel á því í ræktinni eða taka til í mataræðinu heldur líka litlu hlutina eins og að eyða meiri tíma með fjölskyldunni eða lesa loksins bókina sem þú ætlaðir þér alltaf að lesa. Notum tækifærið og lítum í eigin barm, er ekki eitthvað sem við megum bæta í okkar fari? Er ekki einhver áskorun sem okkur langar að sigrast á í eitt skipti fyrir öll?</p>
+          <div class="question">
+            <h5>Er þetta ekki bara enn eitt átakið eins og áramótaátakið sem ég stend aldrei við?</h5>
+            <p>Meistaramánuðurinn á ekki að vera átak, heldur upphafið á breytingu lífs þíns til hins betra. Meistaramánuðurinn snýst ekki bara um að taka vel á því í ræktinni eða taka til í mataræðinu heldur líka litlu hlutina eins og að eyða meiri tíma með fjölskyldunni eða lesa loksins bókina sem þú ætlaðir þér alltaf að lesa. Notum tækifærið og lítum í eigin barm, er ekki eitthvað sem við megum bæta í okkar fari? Er ekki einhver áskorun sem okkur langar að sigrast á í eitt skipti fyrir öll?</p>
+          </div>
 
-          <h5>Þarf ég að skrá mig einhversstaðar?</h5>
-          <p>Við hvetjum fólk til þess að líka við facebook síðu Meistaramánaðarins til þess að fá reglulega hvatningu ásamt því að skrá sig á www.meistaramanudur.is.</p>
+          <div class="question">
+            <h5>Þarf ég að skrá mig einhversstaðar?</h5>
+            <p>Við hvetjum fólk til þess að líka við facebook síðu Meistaramánaðarins til þess að fá reglulega hvatningu ásamt því að skrá sig á www.meistaramanudur.is.</p>
+          </div>
 
-          <h5>En ég lifi eins og meistari alla daga, af hverju ætti ég að breyta því?</h5>
-          <p>Til hamingju með að vera með góða stjórn á lífi þínu. Sagt er að einstaklingar sem nái lengst í lífinu séu stanslaust að fara út fyrir þægindarammann og reyna þannig að bæta sig líka í hlutum sem þeir eru ekki góðir í fyrir. Ef afreksíþróttafólk og virtúósar listalífsins telja sig alltaf geta bætt sig þá getur þú það líka. Batnandi mönnum er jú best að lifa.</p>
+          <div class="question">
+            <h5>En ég lifi eins og meistari alla daga, af hverju ætti ég að breyta því?</h5>
+            <p>Til hamingju með að vera með góða stjórn á lífi þínu. Sagt er að einstaklingar sem nái lengst í lífinu séu stanslaust að fara út fyrir þægindarammann og reyna þannig að bæta sig líka í hlutum sem þeir eru ekki góðir í fyrir. Ef afreksíþróttafólk og virtúósar listalífsins telja sig alltaf geta bætt sig þá getur þú það líka. Batnandi mönnum er jú best að lifa.</p>
+          </div>
 
-          <h5>Ég æfi mikið og borða hollt. Af hverju ætti ég að taka þátt?</h5>
-          <p>Lestu bókina sem þig langaði alltaf til þess að lesa, lærðu að elda kjötsúpu einsog mamma gerir svo vel, prufaðu að æfa dans í einn mánuð og sjá hvort það er ekki miklu skemmtilegra en þú bjóst við. Möguleikarnir eru fjölmargir fyrir þig til þess að bæta við líf þitt bæði ánægju og gæðum, Meistaramánuðurinn einskorðast alls ekki aðeins við bætta líkamlega heilsu.</p>
+          <div class="question">
+            <h5>Ég æfi mikið og borða hollt. Af hverju ætti ég að taka þátt?</h5>
+            <p>Lestu bókina sem þig langaði alltaf til þess að lesa, lærðu að elda kjötsúpu einsog mamma gerir svo vel, prufaðu að æfa dans í einn mánuð og sjá hvort það er ekki miklu skemmtilegra en þú bjóst við. Möguleikarnir eru fjölmargir fyrir þig til þess að bæta við líf þitt bæði ánægju og gæðum, Meistaramánuðurinn einskorðast alls ekki aðeins við bætta líkamlega heilsu.</p>
+          </div>
 
-          <h5>Mælið þið með einhverju sérstöku mataræði?</h5>
-          <p>Í gegnum tíðina höfum við mælt með Paleo mataræðinu svokallaða. Í Paleo mataræðinu sleppir maður öllum sykri, hveiti og mjólkurvörum. Í staðin borðar maður nóg af kjöti, fisk, grænmeti, ávöxtum, hnetum og fræjum. Á netinu er hægt að nálgast fjölmargar bækur og greinar um mataræðið og mælum við með að þið kynnið ykkur það betur. Hvort sem þú ferð á Paleo mataræði eða ekki hvetjum við þig til þess að fara út fyrir þægindahringinn í mataræðinu og taka til dæmis út sykraðar matar- og drykkjarvörur. </p>
+          <div class="question">
+            <h5>Mælið þið með einhverju sérstöku mataræði?</h5>
+            <p>Í gegnum tíðina höfum við mælt með Paleo mataræðinu svokallaða. Í Paleo mataræðinu sleppir maður öllum sykri, hveiti og mjólkurvörum. Í staðin borðar maður nóg af kjöti, fisk, grænmeti, ávöxtum, hnetum og fræjum. Á netinu er hægt að nálgast fjölmargar bækur og greinar um mataræðið og mælum við með að þið kynnið ykkur það betur. Hvort sem þú ferð á Paleo mataræði eða ekki hvetjum við þig til þess að fara út fyrir þægindahringinn í mataræðinu og taka til dæmis út sykraðar matar- og drykkjarvörur. </p>
+          </div>
 
-          <h5>Hvað með áfengi?</h5>
-          <p>Við mælum með því að fólk sleppi áfengi alfarið. Einsog það getur verið gaman að fá sér í glas með vinunum þá er áfengisneysla líka lífstíll sem auðvelt er að breyta. Það getur verið erfitt að vera sá eini af vinunum sem hættir að drekka og því er tilvalið að menn leggist á eitt í Meistaramánuðinum og prufi þetta í sameiningu. Að detta í það um hverja helgi er alls ekki gott fyrir líkamann og því er tilvalið að nota þennan mánuð til þess að hvíla í það minnsta lifrina örlítið. Það hefur líka stórkostlega góð áhrif á budduna að hætta áfengisneyslu um stund.</p>
+          <div class="question">
+            <h5>Hvað með áfengi?</h5>
+            <p>Við mælum með því að fólk sleppi áfengi alfarið. Einsog það getur verið gaman að fá sér í glas með vinunum þá er áfengisneysla líka lífstíll sem auðvelt er að breyta. Það getur verið erfitt að vera sá eini af vinunum sem hættir að drekka og því er tilvalið að menn leggist á eitt í Meistaramánuðinum og prufi þetta í sameiningu. Að detta í það um hverja helgi er alls ekki gott fyrir líkamann og því er tilvalið að nota þennan mánuð til þess að hvíla í það minnsta lifrina örlítið. Það hefur líka stórkostlega góð áhrif á budduna að hætta áfengisneyslu um stund.</p>
+          </div>
 
-          <h5>Það er árshátíð í vinnunni og ég á afmæli í mánuðinum, er í lagi að svindla þá?</h5>
-          <p>Mundu að það ert þú sem setur reglurnar í þínum Meistaramánuði. Svo lengi sem þú ákveður að það sé einn svindldagur eða jafnvel fleiri í mánuðinum þá ertu þú með fulla stjórn á því að stefna í betri mann, lykilatriðið er að vera heiðarlegur við sjálfan sig. Vittu líka til, kannski langar þig bara ekkert til þess að fá þér sjúss þegar á hólminn er komið. Hugsanlega þráiru einfaldlega að taka næsta dag snemma og með bros á vör?</p>
+          <div class="question">
+            <h5>Það er árshátíð í vinnunni og ég á afmæli í mánuðinum, er í lagi að svindla þá?</h5>
+            <p>Mundu að það ert þú sem setur reglurnar í þínum Meistaramánuði. Svo lengi sem þú ákveður að það sé einn svindldagur eða jafnvel fleiri í mánuðinum þá ertu þú með fulla stjórn á því að stefna í betri mann, lykilatriðið er að vera heiðarlegur við sjálfan sig. Vittu líka til, kannski langar þig bara ekkert til þess að fá þér sjúss þegar á hólminn er komið. Hugsanlega þráiru einfaldlega að taka næsta dag snemma og með bros á vör?</p>
+          </div>
 
-          <h5>Ég hef aldrei hreyft mig, hvað á ég að gera?</h5>
-          <p>Byrjaðu hægt og leitaðu góðra ráða hjá fagfólki, kunningjum þínum eða hreinlega með því að kynna þér þetta á netinu. Sumar líkamsræktarstöðvar eru með byrjendanámskeið til dæmis. Það gæti verið tilvalin byrjun. Inn á facebook síðu Meistaramánaðarins munum við setja inn tengla á hlaupa- og sundæfingaplön og jafnvel eitthvað fleira sem gæti hjálpað.</p>
+          <div class="question">
+            <h5>Ég hef aldrei hreyft mig, hvað á ég að gera?</h5>
+            <p>Byrjaðu hægt og leitaðu góðra ráða hjá fagfólki, kunningjum þínum eða hreinlega með því að kynna þér þetta á netinu. Sumar líkamsræktarstöðvar eru með byrjendanámskeið til dæmis. Það gæti verið tilvalin byrjun. Inn á facebook síðu Meistaramánaðarins munum við setja inn tengla á hlaupa- og sundæfingaplön og jafnvel eitthvað fleira sem gæti hjálpað.</p>
+          </div>
 
-          <h5>En kostar þetta ekki alltof mikinn pening?</h5>
-          <p>Meistaramánuðurinn á ekki að þurfa að kosta krónu með gati. Í fyrsta skipti sem Meistaramánuðurinn var haldinn þá tóku aðeins sárafátækir háskólanemar þátt og nutu þess að gera ódýru og einföldu hlutina saman. Hvort sem það er að fara út að skokka, læra að hnýta flugur, elda meira með fólkinu sem manni þykir gott að vera með eða að hætta að keyra í vinnuna þá verðu hver og einn að finna sér markmið við sitt hæfi. Það á jafnt við um fjárhag, aldur, staðsetningu og alla aðra hluti sem marka lífstíl þinn.</p>
+          <div class="question">
+            <h5>En kostar þetta ekki alltof mikinn pening?</h5>
+            <p>Meistaramánuðurinn á ekki að þurfa að kosta krónu með gati. Í fyrsta skipti sem Meistaramánuðurinn var haldinn þá tóku aðeins sárafátækir háskólanemar þátt og nutu þess að gera ódýru og einföldu hlutina saman. Hvort sem það er að fara út að skokka, læra að hnýta flugur, elda meira með fólkinu sem manni þykir gott að vera með eða að hætta að keyra í vinnuna þá verðu hver og einn að finna sér markmið við sitt hæfi. Það á jafnt við um fjárhag, aldur, staðsetningu og alla aðra hluti sem marka lífstíl þinn.</p>
+          </div>
 
-          <h5>Ég get ekki vaknað snemma á morgnanna, hvað á ég að gera?</h5>
-          <p>Flestum ef ekki öllum þykir erfitt að vakna þreyttir á morgnana, enda er þetta einn af þessum hlutum sem fólk þarf að venja sig á. Gott ráð til þess að koma sér uppúr morgunmyglunni fljótt og örugglega er að hugsa ekki um það að fara á fætur sem fyrstu athöfn dagsins heldur að vakna alltaf og byrja á því að fá sér stórt vatnsglas. Bæði er líkaminn oft vatnsþurfti eftir 8 tíma svefn og einnig er ágætt að sleppa því hreinlega að snúsa eða að velta deginum fyrir sér og byrja hann tafarlaust á einhverju sem gerir þér gott.</p>
+          <div class="question">
+            <h5>Ég get ekki vaknað snemma á morgnanna, hvað á ég að gera?</h5>
+            <p>Flestum ef ekki öllum þykir erfitt að vakna þreyttir á morgnana, enda er þetta einn af þessum hlutum sem fólk þarf að venja sig á. Gott ráð til þess að koma sér uppúr morgunmyglunni fljótt og örugglega er að hugsa ekki um það að fara á fætur sem fyrstu athöfn dagsins heldur að vakna alltaf og byrja á því að fá sér stórt vatnsglas. Bæði er líkaminn oft vatnsþurfti eftir 8 tíma svefn og einnig er ágætt að sleppa því hreinlega að snúsa eða að velta deginum fyrir sér og byrja hann tafarlaust á einhverju sem gerir þér gott.</p>
+          </div>
 
         </div>
 

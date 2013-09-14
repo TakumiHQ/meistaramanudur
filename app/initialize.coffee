@@ -46,6 +46,11 @@ class Meistaramanudur
       mixpanel.track "Focus",
         field: $el.attr "name"
 
+    ($ "#spurningar .question").each (i, el) ->
+      ($ el).find("h5").on "click", (event) ->
+        ($ el).addClass("open")
+
+
     submitCount = 0
 
     ($ "form button").button()
