@@ -50,6 +50,10 @@ class Meistaramanudur
       ($ el).find("h5").on "click", (event) ->
         ($ el).addClass("open")
 
+    ($ "[for='id-blog']").popover
+      placement: "right"
+      trigger: "click"
+
 
     submitCount = 0
 
