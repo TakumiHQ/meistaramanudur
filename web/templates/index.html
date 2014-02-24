@@ -2,6 +2,8 @@
 
 {% block body %}
 
+<div class="english-link"><a href="/en">English</a></div>
+
 
 <div class="container">
 
@@ -10,7 +12,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h1>
-          <div class="logo"><img src="{{ static('images/logo.png') }}" alt="Meistaramánuður Logo"></div>
+          <div class="logo"><a href="/"><img src="{{ static('images/logo.png') }}" alt="Meistaramánuður Logo"></a></div>
           <div class="lettering"><img src="{{ static('images/lettering-black.png') }}" alt="Meistaramánuður Logo"></div>
         </h1>
         <h3>1. til 31. október 2013</h3>
@@ -24,9 +26,11 @@
     <div class="col-md-2">
       <div class="sidebar" data-spy="affix" data-offset-top="470">
         <ul class="nav nav-pills nav-stacked">
+        {% block sidebar_items %}
           <li><a href="#markmidid">Markmiðið</a></li>
           <li><a href="#spurningar">Spurningar</a></li>
           <li><a href="#instagram">Instagram</a></li>
+        {% endblock %}
         </ul>
       </div>
     </div>
@@ -42,6 +46,8 @@
       <div class="row">
 
         <div class="col-md-7">
+
+          {% block introduction %}
 
           <div id="markmidid">
 
@@ -70,6 +76,8 @@
             </div>
 
           </div>
+
+          {% endblock %}
 
         </div>
 
@@ -149,6 +157,8 @@
 
         </div>
       </div>
+
+      {% block extra %}
 
       <div class="row">
 
@@ -237,6 +247,8 @@
         </div>
 
       </div>
+
+      {% endblock %}
 
     </div>
   </div>

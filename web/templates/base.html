@@ -25,7 +25,7 @@
 
 </head>
 
-<body class="application">
+<body class="application view-{{ request.endpoint.split('.')[-1] }}">
 
   {%- block body %}{% endblock %}
 

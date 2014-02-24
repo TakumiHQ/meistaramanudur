@@ -10,9 +10,11 @@ from .extensions import db
 mailchimp = Mailchimp(os.environ['MAILCHIMP_API_KEY'])
 views = Blueprint('views', __name__)
 
+
 @views.route('/')
 def index():
     return render_template('index.html')
+
 
 @views.route('/signup', methods=["POST"])
 def signup():
@@ -39,3 +41,8 @@ def signup():
     )
 
     return jsonify(number=Applicant.query.count())
+
+
+@views.route('/en')
+def english():
+    return render_template('english.html')
