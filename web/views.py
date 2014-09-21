@@ -1,8 +1,11 @@
 # encoding=utf-8
 
 import os
+import datetime
+
 from flask import Blueprint, jsonify, render_template, request
 from mailchimp import Mailchimp
+from sqlalchemy.sql.expression import extract
 
 from .models import Applicant
 from .extensions import db
@@ -21,13 +24,12 @@ def signup():
 
     data = request.form.to_dict()
     newcomer = not bool(data.pop("oldie", False))
-    blog_url = data.pop("blog")
     try:
         age = int(data.pop("age"))
     except ValueError:
         age = None
 
-    applicant = Applicant(age=age, blog_url=blog_url, newcomer=newcomer, **data)
+    applicant = Applicant(age=age, newcomer=newcomer, **data)
     db.session.add(applicant)
     db.session.commit()
 
@@ -40,7 +42,9 @@ def signup():
         double_optin=False,
     )
 
-    return jsonify(number=Applicant.query.count())
+    applicants_this_year = Applicant.query.filter(
+        extract('year', Applicant.created) == datetime.datetime.now().year)
+    return jsonify(number=applicants_this_year.count())
 
 
 @views.route('/en')

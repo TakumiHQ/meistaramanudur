@@ -2,6 +2,7 @@ from .extensions import db
 
 from sqlalchemy import func
 
+
 class Applicant(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -14,3 +15,4 @@ class Applicant(db.Model):
     blog_url = db.Column(db.String)
     age = db.Column(db.Integer)
     instagram = db.Column(db.String)
+    twitter = db.Column(db.String)

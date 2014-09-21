@@ -1,7 +1,7 @@
 
 <h4>Til hamingju!</h4>
-<p>Þú ert númer <span class="count"><%= @count %></span> til að skrá þig í Meistaramánuð 2013.</p>
+<p>Þú ert númer <span class="count"><%= @count %></span> til að skrá þig í Meistaramánuð 2014.</p>
 <p>Þá er bara að setja sér markmið. <br> Gangi þér vel!</p>
 
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.meistaramanudur.is/?source=tweet" data-text="Ég var númer <%= @count %> til að skrá mig í Meistaramánuðinn 2013" data-via="meistaramanudur" data-size="large" data-count="none" data-hashtags="meistaram">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.meistaramanudur.is/?source=tweet" data-text="Ég var númer <%= @count %> til að skrá mig í Meistaramánuðinn 2014" data-via="meistaramanudur" data-size="large" data-count="none" data-hashtags="meistaram">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
