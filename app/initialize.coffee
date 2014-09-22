@@ -101,11 +101,6 @@ class Meistaramanudur
               @collections.instagram.add photo
     refresh()
 
-    @pusher = new Pusher("78c7db626f8171964b75")
-    channel = @pusher.subscribe("instagram")
-    channel.bind "photo", (data) =>
-      refresh()
-
 
 $ =>
   window.meistaramanudur = new Meistaramanudur
