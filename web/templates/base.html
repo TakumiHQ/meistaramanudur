@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% block head %}{% endblock -%}
-  <link rel="stylesheet" href="{{ static("css/app.css") }}">
+  <link rel="stylesheet" href="{{ static("css/app.css") }}?v=1">
   <link rel="icon" sizes="16x16 32x32" href="{{ static("favicon.ico") }}">
 
   <meta property="og:site_name" content="Meistaramánuður">
@@ -30,7 +30,7 @@
   b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
   mixpanel.init("5c140bfc67dac795fa9b0fbf8066941b");</script><!-- end Mixpanel -->
 
-  <script src="{{ static("js/app.js") }}" defer onload="require('initialize');"></script>
+  <script src="{{ static("js/app.js") }}?v=1" defer onload="require('initialize');"></script>
 
   <script>
     // When ready...
